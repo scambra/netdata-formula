@@ -1,0 +1,91 @@
+# -*- coding: utf-8 -*-
+# vim: ft=yaml
+#
+# Setup variables using grains['os_family'] based logic.
+# You just need to add the key:values for an `os_family` that differ
+# from `defaults.yaml` + `osarch.yaml`.
+# Only add an `os_family` which is/will be supported by the formula.
+#
+# If you do not need to provide defaults via the `os_family` grain,
+# you will need to provide at least an empty dict in this file, e.g.
+# osfamilymap: {}
+---
+Gentoo:
+  pkgs:
+    - sys-devel/autoconf
+    - sys-devel/autoconf-archive
+    - sys-devel/automake
+    - sys-devel/autogen
+    - sys-devel/make
+    - net-misc/curl
+    - dev-vcs/git
+    - sys-devel/gcc
+    - sys-libs/zlib
+    - sys-apps/util-linux
+    - net-libs/libmnl
+    - net-analyzer/netcat
+    - dev-util/pkgconfig
+
+Arch:
+  pkgs:
+    - autoconf
+    - autoconf-archive
+    - automake
+    - autogen
+    - make
+    - git
+    - curl
+    - gcc
+    - zlib
+    - util-linux
+    - libmnl
+    - netcat
+    - pkgconfig
+
+Debian:
+  pkgs:
+    - autoconf
+    - autoconf-archive
+    - automake
+    - autogen
+    - make
+    - git
+    - curl
+    - gcc
+    - zlib1g-dev
+    - uuid-dev
+    - libmnl-dev
+    - netcat
+    - pkg-config
+
+RedHat:
+  pkgs:
+    - autoconf
+    - autoconf-archive
+    - automake
+    - autogen
+    - make
+    - git
+    - curl
+    - gcc
+    - zlib-devel
+    - libuuid-devel
+    - libmnl-devel
+    - nmap-ncat
+    - pkgconfig
+
+Suse:
+  pkgs:
+    - autoconf
+    - autoconf-archive
+    - automake
+    - autogen
+    - make
+    - git
+    - curl
+    - gcc
+    - zlib-devel
+    - libuuid-devel
+    - libmnl0
+    - netcat-openbsd
+    - pkg-config

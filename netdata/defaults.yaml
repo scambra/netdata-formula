@@ -1,0 +1,15 @@
+# -*- coding: utf-8 -*-
+# vim: ft=yaml
+---
+netdata:
+  configs:
+    netdata:
+      mode: 664
+      user: netdata
+  default_config:
+    user: root
+    group: netdata
+    mode: 640
+    dir: '/etc/netdata'
+  service:
+    name: netdata

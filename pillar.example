@@ -1,0 +1,38 @@
+# -*- coding: utf-8 -*-
+# vim: ft=yaml
+---
+netdata:
+  configs:
+    # main config file
+    netdata:
+      file: 'netdata.conf'
+      mode: 664
+      user: netdata
+      group: netdata
+      # if no config is set, file won't be created
+      config:
+        # section in config file
+        global:
+          # lines with key and value
+          hostname: custom_hostname
+    # to receive data
+    stream:
+      generate_api_key: true
+      config:
+        '[api_key]':
+          enabled: yes
+          health enabled by default: auto
+    # to send data
+    stream:
+      config:
+        get_api_key_from: master_minion_id
+        stream:
+          enabled: yes
+          destination: master.example.com
+  default_config:
+    user: root
+    group: netdata
+    mode: 640
+    dir: '/etc/netdata'
+  service:
+    name: netdata
