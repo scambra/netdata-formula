@@ -16,6 +16,7 @@ netdata_repo:
     - rev: master
     - target: /root/netdata
     - force_reset: True
+    - unless: test -f /usr/sbin/netdata
 
 netdata_install:
   cmd.run:
