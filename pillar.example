@@ -29,6 +29,13 @@ netdata:
         stream:
           enabled: yes
           destination: master.example.com
+    # python plugin
+    haproxy:
+      file: python.d/haproxy.conf
+      source: python.conf # use different template in salt://netdata/files (default is netdata.conf)
+      config:
+        via_socket:
+          socket: /run/haproxy/stats.sock
   default_config:
     user: root
     group: netdata

@@ -32,7 +32,7 @@ include:
 
 {{ default_config.dir }}/{{ config_data.get('file', name + '.conf') }}:
   file.managed:
-    - source: salt://netdata/files/netdata.conf
+    - source: salt://netdata/files/{{ config_data.get('source', 'netdata.conf') }}
     - mode: {{ netdata.get('mode', default_config.mode) }}
     - user: {{ netdata.get('user', default_config.user) }}
     - group: {{ netdata.get('group', default_config.group) }}
