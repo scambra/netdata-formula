@@ -11,7 +11,7 @@ include:
 
 {%- set custom_config = False %}
 {%- set default_config = netdata.default_config %}
-{%- for name, config_data in netdata.configs.iteritems() %}
+{%- for name, config_data in netdata.configs.items() %}
 {%-   if 'config' in config_data %}
 {%-     if name == 'stream' %}
 {%-       if config_data.get('generate_api_key', False) and '[api_key]' in config_data.config %}
