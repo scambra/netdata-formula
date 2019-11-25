@@ -9,20 +9,9 @@ netdata_requirements:
   pkg.installed:
     - pkgs: {{ (netdata.pkgs + netdata.get('extra_pkgs', []))| json }}
 
-netdata_repo:
-  git.latest:
-    - name: https://github.com/netdata/netdata.git
-    - depth: 1
-    - rev: master
-    - target: /root/netdata
-    - force_reset: True
-    - unless: test -f /usr/sbin/netdata
-
 netdata_install:
   cmd.run:
-    - cwd: /root/netdata
-    - name: ./netdata-installer.sh --dont-wait
+    - name: bash <(curl -Ss https://my-netdata.io/kickstart.sh) --dont-wait {{ netdata.get('install', {}).get('args', '') }}
     - unless: test -f /usr/sbin/netdata
   require:
-    - git: netdata_repo
     - git: netdata_requirements
