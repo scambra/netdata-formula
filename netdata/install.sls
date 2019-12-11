@@ -11,7 +11,7 @@ netdata_requirements:
 
 netdata_install:
   cmd.run:
-    - name: bash <(curl -Ss https://my-netdata.io/kickstart.sh) --dont-wait {{ netdata.get('install', {}).get('args', '') }}
+    - name: curl -Ss https://my-netdata.io/kickstart.sh | bash -s -- --dont-wait {{ netdata.get('install', {}).get('args', '') }}
     - unless: test -f /usr/sbin/netdata
   require:
     - git: netdata_requirements
