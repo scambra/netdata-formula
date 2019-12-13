@@ -39,8 +39,12 @@ Arch:
     - zlib
     - util-linux
     - libmnl
+    - lz4
+    - libuv
+    - judy
+    - openssl
     - netcat
-    - pkgconfig
+    - pkgconf
 
 Debian:
   pkgs:
@@ -55,6 +59,10 @@ Debian:
     - zlib1g-dev
     - uuid-dev
     - libmnl-dev
+    - libuv1-dev
+    - liblz4-dev
+    - libjudy-dev
+    - libssl-dev
     - netcat
     - pkg-config
 
@@ -68,9 +76,14 @@ RedHat:
     - git
     - curl
     - gcc
+    - findutils
     - zlib-devel
     - libuuid-devel
     - libmnl-devel
+    - Judy-devel
+    - libuv-devel
+    - lz4-devel
+    - openssl-devel
     - nmap-ncat
     - pkgconfig
 
@@ -86,6 +99,11 @@ Suse:
     - gcc
     - zlib-devel
     - libuuid-devel
-    - libmnl0
+    - libmnl-devel
+    - liblz4-devel
+    - libuv-devel
+    - libopenssl-devel
+    - judy-devel
     - netcat-openbsd
-    - pkg-config
+    - pkgconfig
+    - findutils
