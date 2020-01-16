@@ -4,7 +4,7 @@
 netdata:
   configs:
     netdata:
-      mode: 664
+      mode: 644
       user: netdata
   default_config:
     user: root
